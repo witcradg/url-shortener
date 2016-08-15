@@ -1,11 +1,11 @@
 {
-  "name": "beginner-app",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "name": "url-shortener",
+  "version": "0.0.1",
+  "description": "FCC Microservices project",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/witcradg/clementine-tut.git"
+    "url": "git+https://github.com/witcradg/url-shortener.git"
   },
   "author": "Mostafa Eweda <mo.eweda@gmail.com>",
   "dependencies": {
@@ -20,7 +20,7 @@
   "devDependencies": {},
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/witcradg/clementine-tut/issues"
+    "url": "https://github.com/witcradg/url-shortener/issues"
   },
-  "homepage": "https://github.com/witcradg/clementine-tut#readme"
+  "homepage": "https://github.com/witcradg/url-shortener#readme"
 }

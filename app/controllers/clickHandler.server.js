@@ -1,7 +1,7 @@
 'use strict';
 
 function clickHandler(db) {
-console.log("click handler called");
+console.log("tp1 click handler called"); //NOTE: This is called on startup
 	var clicks = db.collection('clicks');
 
 	this.addClick = function(req, res) {
@@ -17,8 +17,10 @@ console.log("click handler called");
 		});
 	};
 	this.getClicks = function(req, res) {
+console.log("tp2 getClicks in controller client"); //NOTE: This is called on startup
+		console.log("req.url",req.url);
+		
 		var clickProjection = { '_id': false };
-
 		clicks.findOne({}, clickProjection, function (err, result) {
 			if (err) {
 				throw err;
