@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
@@ -9,7 +7,7 @@
 
 Welcome to your Node.js project on Cloud9 IDE!
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+FCC Microservices URL Shortener project
 
 ## Running the server
 
@@ -20,7 +18,3 @@ This chat example showcases how to use `socket.io` with a static `express` serve
     $ node server.js
 
 Once the server is running, open the project in the shape of 'https://projectname-username.c9.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
-=======
-# clementine-tut
-clementine beginner application tutorial
->>>>>>> ae7f2514034de56469764e0c0343761de9501f64
