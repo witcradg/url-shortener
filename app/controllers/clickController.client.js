@@ -6,9 +6,8 @@ console.log("tp0 start click controller client");
 	var deleteButton = document.querySelector('.btn-delete');
 	var clickNbr = document.querySelector('#click-nbr');
 	var apiUrl = 'https://oh-my-darlin-witcradg.c9users.io/api/clicks';
-console.log("tp1");
+
 	function ready(fn) {
-console.log("tp2 ready called");
 		if (typeof fn != 'function') { return; }
 
 		if (document.readyState === 'complete') { return fn(); }
@@ -17,7 +16,6 @@ console.log("tp2 ready called");
 	}
 
 	function ajaxRequest(method, url, callback) {
-console.log("tp3 ajaxRequest called for",method);
 		var xmlhttp = new XMLHttpRequest();
 
 		xmlhttp.onreadystatechange = function() {
@@ -34,7 +32,6 @@ console.log("tp3 ajaxRequest called for",method);
 		clickNbr.innerHTML = clicksObject.clicks;	
 	}
 
-console.log("tp4");
 	ready(ajaxRequest('GET', apiUrl, updateClickCount));
 
 	addButton.addEventListener('click', function () {
