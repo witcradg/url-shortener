@@ -6,7 +6,7 @@ var log = function (args) {
 			str += arguments[i] + ' ';    	
 
 	}
-//	console.log(str);
+	//console.log(str);
 }
 
 function logicHandler(db) {  
@@ -15,7 +15,7 @@ function logicHandler(db) {
 	this.getUrl = function(req, res) {
 		log("getUrl called");
 		var value = req.params.value;
-  		if (value == 'favicon.ico') { log('skipping favicon'); res.end(); return;}
+  		if (value == 'favicon.ico') { log('skipping favicon'); return;}
   		log("value:",value);
 		log("JSON value:",JSON.stringify(value));
 

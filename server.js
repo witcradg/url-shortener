@@ -20,8 +20,10 @@ mongo.connect(url, function (err, db) {
     app.use('/public', express.static(process.cwd() + '/public'));
     app.use("/",router);
     routes(router,db);
+    
+    
 
     app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-        console.log("server listening");
+        console.log("server listening on port " + process.env.PORT + " at IP " + process.env.IP);
     });
 });
