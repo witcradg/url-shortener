@@ -1,17 +1,16 @@
 'use strict';
 
-	var ClickHandler = require(process.cwd() + '/app/controllers/clickHandler.server.js');
+var LogicHandler = require(process.cwd() + '/app/controllers/logicHandler.server.js'); 
 
-module.exports = function (app, db) {
-	var clickHandler = new ClickHandler(db);
+module.exports = function (router, db) {
+	var logicHandler = new LogicHandler(db);
 
-	app.route('/').get( function (req, res) {
+	router.use(logicHandler.processSubmittedUrl);
+
+    router.get("/",function(req,res){
+    	//home page with usage instructions
 		res.sendFile(process.cwd() + '/public/index.html');
-	});
-
-	app.route('/api/clicks')
-		.get(clickHandler.getClicks)
-		.post(clickHandler.addClick)
-		.delete(clickHandler.resetClicks);
-};
-
+    });
+    
+    router.get("/:value",logicHandler.getUrl);
+}
