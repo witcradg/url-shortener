@@ -6,11 +6,15 @@ var express = require('express'),
 
 var app = express();
 var router = express.Router();
-mongo.connect('mongodb://localhost:27017/urlrepo', function (err, db) {
+
+//export MONGOLAB_URI="mongodb://<dbuser>:<dbpassword>@ds161175.mlab.com:61175/fcc-dgw"
+var url = process.env.MONGOLAB_URI;
+
+mongo.connect(url, function (err, db) {
     if (err) {
     	throw new Error('Database failed to connect!');
     } else {
-    	console.log('MongoDB successfully connected on port 27017.');
+    	console.log('MongoDB successfully connected on port 61175.');
     }
     app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
     app.use('/public', express.static(process.cwd() + '/public'));
