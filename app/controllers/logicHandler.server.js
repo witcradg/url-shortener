@@ -6,7 +6,9 @@ var log = function (args) {
 			str += arguments[i] + ' ';    	
 
 	}
-	//console.log(str);
+	if (process.env.DEBUG_LOGGING == "true") {
+		console.log(str);
+	}
 }
 
 function logicHandler(db) {  
@@ -15,21 +17,24 @@ function logicHandler(db) {
 	this.getUrl = function(req, res) {
 		log("getUrl called");
 		var value = req.params.value;
-  		if (value == 'favicon.ico') { log('skipping favicon'); return;}
-  		log("value:",value);
-		log("JSON value:",JSON.stringify(value));
-
-  		urls.findOne( {'short_url': value }, { '_id': false }, function(err, record) {
-  			log("findOne result:",JSON.stringify(record));
-			if (err) { throw err; }
-			if (record) {
-				log("record.original_url:", record.original_url);
-				res.redirect(record.original_url);		
-				res.end();//not required when using res.send, not sure about res.redirect				
-			} else {
-				res.send("error: " + value + " This url is not in the database.");
-			}
-		});
+  		if (value == 'favicon.ico') {
+  			log('skipping favicon');
+  		} else {
+	  		log("value:",value);
+			log("JSON value:",JSON.stringify(value));
+	
+	  		urls.findOne( {'short_url': value }, { '_id': false }, function(err, record) {
+	  			log("findOne result:",JSON.stringify(record));
+				if (err) { throw err; }
+				if (record) {
+					log("record.original_url:", record.original_url);
+					res.redirect(record.original_url);		
+					res.end();//not required when using res.send, not sure about res.redirect				
+				} else {
+					res.send("error: " + value + " This url is not in the database.");
+				}
+			});
+  		}
 	},
 	
 	/**
