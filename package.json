@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/witcradg/url-shortener.git"
   },
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "author": "witcradg@gmail.com",
   "dependencies": {
     "async": "~0.2.8",
     "express": "^4.14.0",
